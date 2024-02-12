@@ -95,16 +95,6 @@ namespace olc
 		};
 
 
-		template<typename T>
-		struct owned_message
-		{
-
-		};
-
-
-
-
-
-
+		
 	}
 }

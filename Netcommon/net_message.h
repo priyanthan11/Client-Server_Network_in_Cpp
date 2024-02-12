@@ -83,28 +83,29 @@ namespace olc
 			
 			}
 
-			// Forward declare the connection
-			template<typename T>
-			class connection;
+			
+
+		};
+		// Forward declare the connection
+		template<typename T>
+		class connection;
 
 
-			template<typename T>
-			struct owned_message
+		template<typename T>
+		struct owned_message
+		{
+
+			std::shared_ptr<connection<T>> remote = nullptr;
+			message<T> msg;
+
+
+			// Again, a friendly string maker
+			friend std::ostream& operator <<(std::ostream& os, const owned_message<T>& msg)
 			{
+				os << msg.msg;
+				return os;
+			}
 
-				std::shared_ptr<connection<T>> remote = nullptr;
-				message<T> msg;
-
-
-				// Again, a friendly string maker
-				friend std::ostream& operator <<(std::ostream& os, const owned_message<T>& msg)
-				{
-					os << msg.msg;
-					return os;
-				}
-
-
-			};
 
 		};
 
