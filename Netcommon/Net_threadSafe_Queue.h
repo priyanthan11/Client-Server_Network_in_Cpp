@@ -13,6 +13,10 @@ namespace olc
 
 			tsqueue() = default;
 			tsqueue(const tsqueue<T>&) = delete;
+			virtual ~tsqueue()
+			{
+				clear();
+			}
 
 		public:
 			// Returns and maintains item at front of queue
@@ -89,6 +93,17 @@ namespace olc
 
 
 		};
+
+
+		template<typename T>
+		struct owned_message
+		{
+
+		};
+
+
+
+
 
 
 	}
